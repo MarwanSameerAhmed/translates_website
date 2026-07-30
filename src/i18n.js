@@ -1,0 +1,140 @@
+export const translations = {
+  ar: {
+    logoText: 'وان ترانسليت',
+    home: 'الرئيسية',
+    about: 'من نحن',
+    services: 'الخدمات',
+    work: 'أعمالنا',
+    gallery: 'المدونة',
+    heroTitle: 'ترجمة دقيقة<br>ومعتمدة لأهم<br>مستنداتك',
+    heroSubTitle: 'احصل على ترجمة لأكثر من 80 لغة، بأسعار تنافسية وتسليم سريع وجودة لا تضاهى.',
+    btnNew: 'اطلب الآن',
+    btnAbout: 'من نحن',
+    playText: 'Play',
+    socialLabel: 'تابعنا',
+    aboutSubtitle: 'تاريخنا وخبراتنا',
+    aboutTitle: 'نحن شركاؤك في النجاح الموثوق',
+    aboutDesc: 'منذ انطلاقتنا ونحن نلتزم بأعلى معايير الجودة في تقديم خدمات الترجمة المعتمدة محلياً وعالمياً. يضم فريقنا نخبة من المترجمين المعتمدين والمراجعين اللغويين لضمان دقة لا متناهية في كل وثيقة تسلم إلينا.',
+    aboutDesc2: 'نسعى دائمًا لتقديم تجربة سلسة ومتكاملة لعملائنا، مع الالتزام بالمواعيد المحددة والسرية التامة.',
+    aboutBtn: 'تعرف على المزيد',
+    btnOrder: 'اطلب الآن',
+    servicesTitle: 'خدماتنا',
+    servicesSubtitle: 'نقدم مجموعة متكاملة من خدمات الترجمة الاحترافية لتلبية كافة احتياجاتك.',
+    srv1Title: 'ترجمة معتمدة',
+    srv1Desc: 'للجهات الحكومية والسفارات',
+    srv1Detail: 'دقة 100%',
+    srv2Title: 'ترجمة طبية',
+    srv2Desc: 'تقارير طبية وأبحاث',
+    srv2Detail: 'مصطلحات دقيقة',
+    srv3Title: 'ترجمة قانونية',
+    srv3Desc: 'عقود ووثائق قانونية',
+    srv3Detail: 'سرية تامة',
+    srv4Title: 'ترجمة فورية',
+    srv4Desc: 'للمؤتمرات والاجتماعات',
+    srv4Detail: 'مترجمين خبراء',
+    stat1: 'سنوات خبرة',
+    stat2: 'لغة نترجمها',
+    stat3: 'دعم فني',
+    stat4: 'رضا العملاء'
+  },
+  en: {
+    logoText: 'One Translate',
+    home: 'Home',
+    about: 'About Us',
+    services: 'Services',
+    work: 'Portfolio',
+    gallery: 'Blog',
+    heroTitle: 'Accurate &<br>Certified<br>Translation',
+    heroSubTitle: 'Get translation for over 80 languages at competitive prices with fast delivery and unmatched quality.',
+    btnNew: 'Order Now',
+    btnAbout: 'About Us',
+    playText: 'Play',
+    socialLabel: 'Follow Us',
+    aboutSubtitle: 'Our History & Expertise',
+    aboutTitle: 'Your Partners in Reliable Success',
+    aboutDesc: 'Since our inception, we have been committed to the highest quality standards in providing certified translation services locally and globally. Our team includes elite certified translators and proofreaders to ensure absolute accuracy in every document.',
+    aboutDesc2: 'We always strive to provide a seamless and integrated experience for our clients, with strict adherence to deadlines and absolute confidentiality.',
+    aboutBtn: 'Learn More',
+    btnOrder: 'Tickets',
+    servicesTitle: 'Our Services',
+    servicesSubtitle: 'We offer a comprehensive range of professional translation services to meet all your needs.',
+    srv1Title: 'Certified Translation',
+    srv1Desc: 'For government agencies and embassies',
+    srv1Detail: '100% Accuracy',
+    srv2Title: 'Medical Translation',
+    srv2Desc: 'Medical reports and research',
+    srv2Detail: 'Precise terminology',
+    srv3Title: 'Legal Translation',
+    srv3Desc: 'Contracts and legal documents',
+    srv3Detail: 'Total confidentiality',
+    srv4Title: 'Simultaneous Translation',
+    srv4Desc: 'For conferences and meetings',
+    srv4Detail: 'Expert translators',
+    stat1: 'Years Exp.',
+    stat2: 'Languages',
+    stat3: 'Support',
+    stat4: 'Satisfaction'
+  },
+  ru: {
+    logoText: 'Ван Транслейт',
+    home: 'Главная',
+    about: 'О нас',
+    services: 'Услуги',
+    work: 'Портфолио',
+    gallery: 'Блог',
+    heroTitle: 'Точный и<br>сертифицированный<br>перевод',
+    heroSubTitle: 'Получите перевод на более чем 80 языков по конкурентоспособным ценам с быстрой доставкой и непревзойденным качеством.',
+    btnNew: 'Заказать',
+    btnAbout: 'О нас',
+    playText: 'Play',
+    socialLabel: 'Подписка',
+    aboutSubtitle: 'Наша история и опыт',
+    aboutTitle: 'Ваш надежный партнер',
+    aboutDesc: 'С момента основания мы придерживаемся самых высоких стандартов качества, предоставляя услуги сертифицированного перевода. Наша команда состоит из элитных переводчиков для обеспечения абсолютной точности.',
+    aboutDesc2: 'Мы всегда стремимся обеспечить безупречный и комплексный опыт для наших клиентов, со строгим соблюдением сроков и абсолютной конфиденциальностью.',
+    aboutBtn: 'Узнать больше',
+    btnOrder: 'Заказать',
+    servicesTitle: 'Наши услуги',
+    servicesSubtitle: 'Мы предлагаем полный спектр профессиональных услуг перевода для удовлетворения всех ваших потребностей.',
+    srv1Title: 'Заверенный перевод',
+    srv1Desc: 'Для государственных органов и посольств',
+    srv1Detail: '100% Точность',
+    srv2Title: 'Медицинский перевод',
+    srv2Desc: 'Медицинские отчеты и исследования',
+    srv2Detail: 'Точная терминология',
+    srv3Title: 'Юридический перевод',
+    srv3Desc: 'Договоры и документы',
+    srv3Detail: 'Конфиденциальность',
+    srv4Title: 'Синхронный перевод',
+    srv4Desc: 'Для конференций и встреч',
+    srv4Detail: 'Опытные переводчики',
+    stat1: 'Лет опыта',
+    stat2: 'Языков',
+    stat3: 'Поддержка',
+    stat4: 'Довольных'
+  }
+};
+
+const langSwitcher = document.getElementById('lang-switcher');
+const htmlTag = document.documentElement;
+
+function setLanguage(lang) {
+  htmlTag.lang = lang;
+  htmlTag.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      // Use innerHTML to parse <br> correctly
+      element.innerHTML = translations[lang][key];
+    }
+  });
+}
+
+if (langSwitcher) {
+  langSwitcher.addEventListener('change', (e) => {
+    setLanguage(e.target.value);
+  });
+}
+
+setLanguage(langSwitcher ? langSwitcher.value : 'ar');

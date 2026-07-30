@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>منصة ترجمة الأوراق</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lottie Web Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body class="font-ar">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loader-content">
+        <div class="main-spinner"></div>
+        <div class="loader-text">وان ترانسليت</div>
+      </div>
+    </div>
+
+    <div id="app">
+      <div class="hero-layout">
+        <!-- Cinematic Background Slider -->
+        <div class="hero-slider" id="parallax-bg">
+          <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1920&q=80');"></div>
+          <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1920&q=80');"></div>
+          <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1920&q=80');"></div>
+        </div>
+        <div class="bg-overlay"></div>
+
+        <!-- Navbar (Full Width White) -->
+        <nav class="top-nav">
+          <div class="logo-wrapper">
+            <div class="logo-icon"></div>
+            <div class="logo-text" data-i18n="logoText">وان ترانسليت</div>
+          </div>
+          
+          <ul class="nav-links">
+            <li><a href="#" data-i18n="home">الرئيسية</a></li>
+            <li><a href="#" data-i18n="about">من نحن</a></li>
+            <li><a href="#" data-i18n="services">الخدمات</a></li>
+            <li><a href="#" data-i18n="work">أعمالنا</a></li>
+            <li><a href="#" data-i18n="gallery">المدونة</a></li>
+          </ul>
+          
+          <div class="nav-actions">
+            <select id="lang-switcher" class="lang-switcher-dark">
+              <option value="ar" selected>العربية</option>
+              <option value="en">English</option>
+              <option value="ru">Русский</option>
+            </select>
+          </div>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <!-- Left Side: Typography & Buttons -->
+          <div class="hero-text-box">
+            <h1 class="hero-title" data-i18n="heroTitle">ترجمة دقيقة<br>ومعتمدة لأهم<br>مستنداتك</h1>
+            <p class="hero-subtitle" data-i18n="heroSubTitle">احصل على ترجمة لأكثر من 80 لغة، بأسعار تنافسية وتسليم سريع وجودة لا تضاهى.</p>
+            <div class="hero-buttons">
+              <button class="btn-solid" data-i18n="btnNew">اطلب الآن</button>
+              <button class="btn-outline" data-i18n="btnAbout">من نحن</button>
+            </div>
+          </div>
+
+          <!-- Middle Right: Play Button -->
+          <div class="play-btn-wrapper">
+            <div class="play-btn">
+              <span class="play-text" data-i18n="playText">Play</span>
+            </div>
+          </div>
+
+          <!-- Bottom Left: Social Links -->
+          <div class="social-links">
+            <span class="social-label" data-i18n="socialLabel">تابعنا</span>
+            <div class="social-dash"></div>
+            <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+          </div>
+
+          <!-- Bottom Right: Partner Logos -->
+          <div class="partner-logos">
+            <div class="partner-logo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>ISO 9001</span>
+            </div>
+            <div class="partner-logo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <span>ATA</span>
+            </div>
+            <div class="partner-logo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              <span>ProZ</span>
+            </div>
+          </div>
+        </div>
+        <!-- Language Scroller -->
+        <div class="language-scroller">
+          <div class="scroller-track">
+            <span>العربية</span><span>•</span>
+            <span>English</span><span>•</span>
+            <span>Français</span><span>•</span>
+            <span>Español</span><span>•</span>
+            <span>Deutsch</span><span>•</span>
+            <span>Русский</span><span>•</span>
+            <span>中文</span><span>•</span>
+            <span>Italiano</span><span>•</span>
+            <span>Türkçe</span><span>•</span>
+            <span>العربية</span><span>•</span>
+            <span>English</span><span>•</span>
+            <span>Français</span><span>•</span>
+            <span>Español</span><span>•</span>
+            <span>Deutsch</span><span>•</span>
+            <span>Русский</span><span>•</span>
+            <span>中文</span><span>•</span>
+            <span>Italiano</span><span>•</span>
+            <span>Türkçe</span><span>•</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Us Section -->
+      <section id="about" class="about-section">
+        <div class="about-bg-glow"></div>
+        <div class="about-container">
+          
+          <!-- Right/Left: Text Content -->
+          <div class="about-text-box slide-hidden-right">
+            <h2 class="about-title" data-i18n="aboutTitle">نحن شركاؤك في النجاح الموثوق</h2>
+            <p class="about-desc" data-i18n="aboutDesc">منذ انطلاقتنا ونحن نلتزم بأعلى معايير الجودة في تقديم خدمات الترجمة المعتمدة محلياً وعالمياً. يضم فريقنا نخبة من المترجمين المعتمدين والمراجعين اللغويين لضمان دقة لا متناهية في كل وثيقة تسلم إلينا.</p>
+            <p class="about-desc" data-i18n="aboutDesc2">نسعى دائمًا لتقديم تجربة سلسة ومتكاملة لعملائنا، مع الالتزام بالمواعيد المحددة والسرية التامة.</p>
+            <div style="margin-top: 1rem;">
+              <button class="btn-outline-dark" data-i18n="aboutBtn">تعرف على المزيد</button>
+            </div>
+          </div>
+
+          <!-- Parallax Grid -->
+          <div class="about-grid-wrapper" dir="ltr">
+            <div class="about-col col-1">
+              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=80" alt="Documents" class="img-card">
+              <img src="https://images.unsplash.com/photo-1455390582262-044cdead2708?auto=format&fit=crop&w=400&q=80" alt="Laptop" class="img-card">
+              <div class="color-block"></div>
+            </div>
+            <div class="about-col col-2">
+              <div class="color-block"></div>
+              <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=400&q=80" alt="Writing" class="img-card">
+              <div class="color-block"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="services-section">
+        <div class="circle-decor top-left"></div>
+        <div class="circle-decor bottom-right"></div>
+        <div class="services-container">
+          
+          <!-- Left/Right: Image Column -->
+          <div class="services-image-col slide-hidden-left">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80" alt="Our Services" class="services-main-img">
+          </div>
+
+          <!-- Right/Left: Content Column -->
+          <div class="services-content-col">
+            <h2 class="services-title slide-hidden-right" data-i18n="servicesTitle">خدماتنا</h2>
+            <p class="services-subtitle slide-hidden-right" data-i18n="servicesSubtitle" style="transition-delay: 0.1s;">نقدم مجموعة متكاملة من خدمات الترجمة الاحترافية لتلبية كافة احتياجاتك.</p>
+            
+            <div class="services-list">
+              
+              <!-- Service 1 -->
+              <div class="service-item slide-hidden-right" style="transition-delay: 0.2s;">
+                <div class="service-info">
+                  <h3 class="service-name" data-i18n="srv1Title">ترجمة معتمدة</h3>
+                  <div class="service-details">
+                    <span data-i18n="srv1Desc">للجهات الحكومية والسفارات</span>
+                    <span class="detail-badge" data-i18n="srv1Detail">دقة 100%</span>
+                  </div>
+                </div>
+                <button class="btn-outline-dark btn-sm" data-i18n="btnOrder">اطلب الآن</button>
+              </div>
+
+              <!-- Service 2 -->
+              <div class="service-item slide-hidden-right" style="transition-delay: 0.3s;">
+                <div class="service-info">
+                  <h3 class="service-name" data-i18n="srv2Title">ترجمة طبية</h3>
+                  <div class="service-details">
+                    <span data-i18n="srv2Desc">تقارير طبية وأبحاث</span>
+                    <span class="detail-badge" data-i18n="srv2Detail">مصطلحات دقيقة</span>
+                  </div>
+                </div>
+                <button class="btn-outline-dark btn-sm" data-i18n="btnOrder">اطلب الآن</button>
+              </div>
+
+              <!-- Service 3 -->
+              <div class="service-item slide-hidden-right" style="transition-delay: 0.4s;">
+                <div class="service-info">
+                  <h3 class="service-name" data-i18n="srv3Title">ترجمة قانونية</h3>
+                  <div class="service-details">
+                    <span data-i18n="srv3Desc">عقود ووثائق قانونية</span>
+                    <span class="detail-badge" data-i18n="srv3Detail">سرية تامة</span>
+                  </div>
+                </div>
+                <button class="btn-outline-dark btn-sm" data-i18n="btnOrder">اطلب الآن</button>
+              </div>
+
+              <!-- Service 4 -->
+              <div class="service-item slide-hidden-right" style="transition-delay: 0.5s;">
+                <div class="service-info">
+                  <h3 class="service-name" data-i18n="srv4Title">ترجمة فورية</h3>
+                  <div class="service-details">
+                    <span data-i18n="srv4Desc">للمؤتمرات والاجتماعات</span>
+                    <span class="detail-badge" data-i18n="srv4Detail">مترجمين خبراء</span>
+                  </div>
+                </div>
+                <button class="btn-outline-dark btn-sm" data-i18n="btnOrder">اطلب الآن</button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
