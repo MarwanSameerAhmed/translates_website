@@ -3,6 +3,16 @@ import './i18n.js'
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ==================== HAMBURGER MENU ====================
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const menuContainer = document.getElementById('menu-container');
+  if (hamburgerBtn && menuContainer) {
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('active');
+      menuContainer.classList.toggle('open');
+    });
+  }
+
   // ==================== LOADING SCREEN ====================
   const loader = document.getElementById('loading-screen');
   setTimeout(() => {
@@ -64,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Allow time for initial render, then observe
   setTimeout(() => {
-    document.querySelectorAll('.slide-hidden-left, .slide-hidden-right, .slide-hidden-bottom').forEach(el => {
+    document.querySelectorAll('.slide-hidden-left, .slide-hidden-right, .slide-hidden-bottom, .img-card').forEach(el => {
       revealObserver.observe(el);
     });
   }, 100);
@@ -79,4 +89,100 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ==================== FAQ SLIDER ====================
+  const faqCards = document.querySelectorAll('.faq-card');
+  const prevBtn = document.getElementById('faq-prev');
+  const nextBtn = document.getElementById('faq-next');
+  
+  if (faqCards.length > 0) {
+    let currentIndex = 1;
+
+    const updateSlider = () => {
+      faqCards.forEach((card, index) => {
+        card.classList.remove('active', 'prev', 'next', 'hidden');
+        if (index === currentIndex) {
+          card.classList.add('active');
+        } else if (index === currentIndex - 1) {
+          card.classList.add('prev');
+        } else if (index === currentIndex + 1) {
+          card.classList.add('next');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    };
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSlider();
+        }
+      });
+    }
+    
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        if (currentIndex < faqCards.length - 1) {
+          currentIndex++;
+          updateSlider();
+        }
+      });
+    }
+
+    faqCards.forEach((card, index) => {
+      card.addEventListener('click', () => {
+        if (card.classList.contains('prev') || card.classList.contains('next')) {
+          currentIndex = index;
+          updateSlider();
+        }
+      });
+    });
+
+    updateSlider();
+  }
+
 });
+
+// ==================== PRELOADER ====================
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    preloader.classList.add('hidden');
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 800);
+  }
+});
+
+// ==================== CUSTOM CURSOR ====================
+const cursorDot = document.getElementById('cursor-dot');
+const cursorOutline = document.getElementById('cursor-outline');
+
+if (cursorDot && cursorOutline && window.matchMedia("(pointer: fine)").matches) {
+  window.addEventListener('mousemove', (e) => {
+    const posX = e.clientX;
+    const posY = e.clientY;
+    
+    cursorDot.style.left = `${posX}px`;
+    cursorDot.style.top = `${posY}px`;
+    
+    cursorOutline.animate({
+      left: `${posX}px`,
+      top: `${posY}px`
+    }, { duration: 150, fill: "forwards" });
+  });
+
+  // Re-query interactables after slight delay to ensure dynamic elements are caught
+  setTimeout(() => {
+    const interactables = document.querySelectorAll('a, button, input, textarea, .faq-card, .faq-nav-btn, .lang-btn, .hiw-card');
+    interactables.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorOutline.classList.add('hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursorOutline.classList.remove('hover');
+      });
+    });
+  }, 500);
+}

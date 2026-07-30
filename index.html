@@ -7,7 +7,7 @@
     <title>منصة ترجمة الأوراق</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Lottie Web Player -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -15,12 +15,9 @@
     <link rel="stylesheet" href="/src/style.css">
   </head>
   <body class="font-ar">
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
-      <div class="loader-content">
-        <div class="main-spinner"></div>
-        <div class="loader-text">وان ترانسليت</div>
-      </div>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+      <div class="spinner"></div>
     </div>
 
     <div id="app">
@@ -40,20 +37,29 @@
             <div class="logo-text" data-i18n="logoText">وان ترانسليت</div>
           </div>
           
-          <ul class="nav-links">
-            <li><a href="#" data-i18n="home">الرئيسية</a></li>
-            <li><a href="#" data-i18n="about">من نحن</a></li>
-            <li><a href="#" data-i18n="services">الخدمات</a></li>
-            <li><a href="#" data-i18n="work">أعمالنا</a></li>
-            <li><a href="#" data-i18n="gallery">المدونة</a></li>
-          </ul>
+          <!-- Hamburger Button -->
+          <button class="hamburger-btn" id="hamburger-btn" aria-label="Menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </button>
           
-          <div class="nav-actions">
-            <select id="lang-switcher" class="lang-switcher-dark">
-              <option value="ar" selected>العربية</option>
-              <option value="en">English</option>
-              <option value="ru">Русский</option>
-            </select>
+          <div class="menu-container" id="menu-container">
+            <ul class="nav-links">
+              <li><a href="#" data-i18n="home">الرئيسية</a></li>
+              <li><a href="#" data-i18n="about">من نحن</a></li>
+              <li><a href="#" data-i18n="services">الخدمات</a></li>
+              <li><a href="#" data-i18n="work">أعمالنا</a></li>
+              <li><a href="#" data-i18n="gallery">المدونة</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+              <select id="lang-switcher" class="lang-switcher-dark">
+                <option value="ar" selected>العربية</option>
+                <option value="en">English</option>
+                <option value="ru">Русский</option>
+              </select>
+            </div>
           </div>
         </nav>
 
@@ -61,7 +67,7 @@
         <div class="hero-content">
           <!-- Left Side: Typography & Buttons -->
           <div class="hero-text-box">
-            <h1 class="hero-title" data-i18n="heroTitle">ترجمة دقيقة<br>ومعتمدة لأهم<br>مستنداتك</h1>
+            <h1 class="hero-title" data-i18n="heroTitle">ترجمة دقيقة ومعتمدة لأهم مستنداتك</h1>
             <p class="hero-subtitle" data-i18n="heroSubTitle">احصل على ترجمة لأكثر من 80 لغة، بأسعار تنافسية وتسليم سريع وجودة لا تضاهى.</p>
             <div class="hero-buttons">
               <button class="btn-solid" data-i18n="btnNew">اطلب الآن</button>
@@ -69,12 +75,7 @@
             </div>
           </div>
 
-          <!-- Middle Right: Play Button -->
-          <div class="play-btn-wrapper">
-            <div class="play-btn">
-              <span class="play-text" data-i18n="playText">Play</span>
-            </div>
-          </div>
+
 
           <!-- Bottom Left: Social Links -->
           <div class="social-links">
@@ -160,8 +161,8 @@
 
       <!-- Services Section -->
       <section id="services" class="services-section">
-        <div class="circle-decor top-left"></div>
-        <div class="circle-decor bottom-right"></div>
+        <div class="circle-decor top-left slide-hidden-bottom" style="transition-delay: 0.1s;"></div>
+        <div class="circle-decor bottom-right slide-hidden-bottom" style="transition-delay: 0.3s;"></div>
         <div class="services-container">
           
           <!-- Left/Right: Image Column -->
@@ -230,7 +231,105 @@
         </div>
       </section>
 
+      <!-- How It Works Section -->
+      <section id="how-it-works" class="how-it-works-section">
+        <div class="hiw-circle-decor primary slide-hidden-right"></div>
+        <div class="hiw-circle-decor secondary slide-hidden-left"></div>
+        <div class="hiw-container">
+          <div class="hiw-header slide-hidden-bottom">
+            <h2 class="hiw-title" data-i18n="hiwTitle">آلية العمل</h2>
+            <p class="hiw-subtitle" data-i18n="hiwSubtitle">نقدم لك تجربة ترجمة سلسة وموثوقة، بخطوات بسيطة تضمن لك الجودة والسرعة.</p>
+          </div>
+          
+          <div class="hiw-steps-wrapper">
+            <!-- Step 1 -->
+            <div class="hiw-step-card slide-hidden-bottom" style="transition-delay: 0.1s;">
+              <div class="hiw-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&q=80" alt="Step 1" class="hiw-img">
+              </div>
+              <h3 class="hiw-step-title" data-i18n="hiwStep1">استلام الطلب</h3>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="hiw-step-card slide-hidden-bottom" style="transition-delay: 0.2s;">
+              <div class="hiw-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=400&q=80" alt="Step 2" class="hiw-img">
+              </div>
+              <h3 class="hiw-step-title" data-i18n="hiwStep2">مراجعة المستندات</h3>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="hiw-step-card slide-hidden-bottom" style="transition-delay: 0.3s;">
+              <div class="hiw-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1455390582262-044cdead2708?auto=format&fit=crop&w=400&q=80" alt="Step 3" class="hiw-img">
+              </div>
+              <h3 class="hiw-step-title" data-i18n="hiwStep3">الترجمة والتدقيق</h3>
+            </div>
+            
+            <!-- Step 4 -->
+            <div class="hiw-step-card slide-hidden-bottom" style="transition-delay: 0.4s;">
+              <div class="hiw-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=400&q=80" alt="Step 4" class="hiw-img">
+              </div>
+              <h3 class="hiw-step-title" data-i18n="hiwStep4">التسليم النهائي</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="faq-section">
+        <div class="faq-circle-decor slide-hidden-left"></div>
+        <div class="faq-container">
+          <div class="hiw-header slide-hidden-bottom">
+            <h2 class="hiw-title" data-i18n="faqTitle">الأسئلة الشائعة</h2>
+            <p class="hiw-subtitle" data-i18n="faqSubtitle">كل ما تحتاج لمعرفته حول خدمات الترجمة التي نقدمها وآلية العمل.</p>
+          </div>
+          
+          <div class="faq-slider-wrapper slide-hidden-bottom">
+            <button class="faq-nav-btn prev" id="faq-prev">→</button>
+            <div class="faq-slider">
+              <!-- Cards -->
+              <div class="faq-card prev">
+                <div class="faq-bg" style="background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="faq-content">
+                  <h3 class="faq-q" data-i18n="faq1Q">كم تستغرق عملية الترجمة؟</h3>
+                  <p class="faq-a" data-i18n="faq1A">تعتمد المدة على حجم المستند، لكننا نضمن تسليم معظم الطلبات خلال 24 ساعة.</p>
+                </div>
+              </div>
+              <div class="faq-card active">
+                <div class="faq-bg" style="background-image: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="faq-content">
+                  <h3 class="faq-q" data-i18n="faq2Q">هل الترجمة معتمدة رسمياً؟</h3>
+                  <p class="faq-a" data-i18n="faq2A">نعم، جميع تراجمنا معتمدة ومقبولة لدى جميع الجهات الحكومية والسفارات.</p>
+                </div>
+              </div>
+              <div class="faq-card next">
+                <div class="faq-bg" style="background-image: url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="faq-content">
+                  <h3 class="faq-q" data-i18n="faq3Q">كيف يمكنني إرسال المستندات؟</h3>
+                  <p class="faq-a" data-i18n="faq3A">يمكنك رفع المستندات مباشرة عبر منصتنا بأمان وسرية تامة.</p>
+                </div>
+              </div>
+              <div class="faq-card hidden">
+                <div class="faq-bg" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80')"></div>
+                <div class="faq-content">
+                  <h3 class="faq-q" data-i18n="faq4Q">هل تضمنون سرية بياناتي؟</h3>
+                  <p class="faq-a" data-i18n="faq4A">بكل تأكيد، نطبق بروتوكولات تشفير صارمة لحماية كافة ملفاتك ومعلوماتك الشخصية.</p>
+                </div>
+              </div>
+            </div>
+            <button class="faq-nav-btn next" id="faq-next">←</button>
+          </div>
+        </div>
+      </section>
+
     </div>
+    
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+    
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
