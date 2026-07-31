@@ -215,8 +215,8 @@
           </div>
         </div>
 
-        <!-- Parallax Grid -->
-        <div class="about-grid-wrapper" dir="ltr">
+        <!-- Desktop Parallax Grid (Visible only on large screens) -->
+        <div class="about-grid-wrapper desktop-only" dir="ltr">
           <div class="about-col col-1">
             <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=400&q=80"
               alt="Documents" class="img-card">
@@ -229,6 +229,54 @@
             <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=400&q=80"
               alt="Writing" class="img-card">
             <div class="color-block"></div>
+          </div>
+        </div>
+
+        <!-- Modern Image Cards (Visible only on small screens) -->
+        <div class="modern-cards-wrapper mobile-only">
+          <!-- Card 1 -->
+          <div class="modern-image-card slide-hidden-bottom" style="transition-delay: 0.1s;">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" alt="Translation">
+            <div class="card-overlay"></div>
+            <div class="card-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span data-i18n="cardBadge1">Legal</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <div class="card-content">
+              <span class="card-year" data-i18n="cardYear1">[2023-2025]</span>
+              <h3 class="card-title" data-i18n="cardTitle1">SIXT</h3>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="modern-image-card slide-hidden-bottom" style="transition-delay: 0.2s;">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead2708?auto=format&fit=crop&w=800&q=80" alt="Tech">
+            <div class="card-overlay"></div>
+            <div class="card-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span data-i18n="cardBadge2">Card Machines</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <div class="card-content">
+              <span class="card-year" data-i18n="cardYear2">[2021-2025]</span>
+              <h3 class="card-title" data-i18n="cardTitle2">Dojo - B2B</h3>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="modern-image-card slide-hidden-bottom" style="transition-delay: 0.3s;">
+            <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80" alt="Global">
+            <div class="card-overlay"></div>
+            <div class="card-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span data-i18n="cardBadge3">Carrental</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <div class="card-content">
+              <span class="card-year" data-i18n="cardYear3">[2020-2025]</span>
+              <h3 class="card-title" data-i18n="cardTitle3">Magnet</h3>
+            </div>
           </div>
         </div>
 
@@ -311,8 +359,10 @@
       </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works-section">
+    <!-- Combined Sections Wrapper -->
+    <div class="combined-sections-wrapper">
+      <!-- How It Works Section -->
+      <section id="how-it-works" class="how-it-works-section">
       <div class="hiw-circle-decor primary slide-hidden-right"></div>
       <div class="hiw-circle-decor secondary slide-hidden-left"></div>
       <div class="hiw-container">
@@ -324,14 +374,18 @@
             والسرعة.</p>
         </div>
 
-        <div class="hiw-steps-wrapper">
+        <div class="hiw-steps-wrapper slide-hidden-bottom">
           <!-- Step 1 -->
           <div class="hiw-step-card slide-hidden-bottom" style="transition-delay: 0.1s;">
             <div class="hiw-img-wrapper">
               <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&q=80"
                 alt="Step 1" class="hiw-img">
+              <div class="hiw-card-content">
+                <div class="hiw-step-number">01</div>
+                <h3 class="hiw-step-title" data-i18n="hiwStep1">استلام الطلب</h3>
+                <div class="hiw-animated-line"></div>
+              </div>
             </div>
-            <h3 class="hiw-step-title" data-i18n="hiwStep1">استلام الطلب</h3>
           </div>
 
           <!-- Step 2 -->
@@ -339,17 +393,25 @@
             <div class="hiw-img-wrapper">
               <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=400&q=80"
                 alt="Step 2" class="hiw-img">
+              <div class="hiw-card-content">
+                <div class="hiw-step-number">02</div>
+                <h3 class="hiw-step-title" data-i18n="hiwStep2">مراجعة المستندات</h3>
+                <div class="hiw-animated-line"></div>
+              </div>
             </div>
-            <h3 class="hiw-step-title" data-i18n="hiwStep2">مراجعة المستندات</h3>
           </div>
 
           <!-- Step 3 -->
           <div class="hiw-step-card slide-hidden-bottom" style="transition-delay: 0.3s;">
             <div class="hiw-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1455390582262-044cdead2708?auto=format&fit=crop&w=400&q=80"
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80"
                 alt="Step 3" class="hiw-img">
+              <div class="hiw-card-content">
+                <div class="hiw-step-number">03</div>
+                <h3 class="hiw-step-title" data-i18n="hiwStep3">الترجمة والتدقيق</h3>
+                <div class="hiw-animated-line"></div>
+              </div>
             </div>
-            <h3 class="hiw-step-title" data-i18n="hiwStep3">الترجمة والتدقيق</h3>
           </div>
 
           <!-- Step 4 -->
@@ -357,8 +419,12 @@
             <div class="hiw-img-wrapper">
               <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=400&q=80"
                 alt="Step 4" class="hiw-img">
+              <div class="hiw-card-content">
+                <div class="hiw-step-number">04</div>
+                <h3 class="hiw-step-title" data-i18n="hiwStep4">التسليم النهائي</h3>
+                <div class="hiw-animated-line"></div>
+              </div>
             </div>
-            <h3 class="hiw-step-title" data-i18n="hiwStep4">التسليم النهائي</h3>
           </div>
         </div>
       </div>
@@ -424,6 +490,7 @@
         </div>
       </div>
     </section>
+    </div>
 
   </div>
 
