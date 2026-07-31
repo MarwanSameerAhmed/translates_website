@@ -1,12 +1,13 @@
 export const translations = {
   ar: {
-    logoText: 'وان ترانسليت',
+    logoText: 'ترانسليت',
     home: 'الرئيسية',
     about: 'من نحن',
     services: 'الخدمات',
     work: 'أعمالنا',
     gallery: 'المدونة',
-    heroTitle: 'ترجمة احترافية ودقيقة لأهم مستنداتك حول العالم',
+    heroTitle: 'ترجمة <span class="title-highlight">احترافية</span> ودقيقة<br>لأهم مستنداتك حول العالم',
+    heroBadge: '<span class="badge-dot"></span> موثوق من 500+ عميل حول العالم',
     heroSubTitle: 'احصل على خدمات ترجمة متكاملة لأكثر من 80 لغة، مصممة لتلبية احتياجاتك بدقة متناهية وتسليم في وقت قياسي.',
     btnNew: 'اطلب الآن',
     btnAbout: 'من نحن',
@@ -35,17 +36,23 @@ export const translations = {
     stat1: 'سنوات خبرة',
     stat2: 'لغة نترجمها',
     stat3: 'دعم فني',
-    stat4: 'رضا العملاء'
+    stat4: 'رضا العملاء',
+    dotHero: 'الرئيسية',
+    dotAbout: 'من نحن',
+    dotServices: 'الخدمات',
+    dotHiw: 'آلية العمل',
+    dotFaq: 'الأسئلة'
   },
   en: {
-    logoText: 'One Translate',
+    logoText: 'Translate',
     home: 'Home',
     about: 'About Us',
     services: 'Services',
     work: 'Portfolio',
     gallery: 'Blog',
-    heroTitle: 'Professional and accurate translation for your documents worldwide',
-    heroSubTitle: 'Get comprehensive translation services in over 80 languages, tailored to your needs with extreme precision and fast delivery.',
+    heroBadge: '<span class="badge-dot"></span> Trusted by 500+ Clients Worldwide',
+    heroTitle: 'Professional &<br>Accurate <span class="title-highlight">Translation</span><br>for Your Documents',
+    heroSubTitle: 'Get comprehensive translation services in over 80 languages, tailored to your needs with extreme precision and record-breaking delivery times.',
     btnNew: 'Order Now',
     btnAbout: 'About Us',
     playText: 'Play',
@@ -73,7 +80,28 @@ export const translations = {
     stat1: 'Years Exp.',
     stat2: 'Languages',
     stat3: 'Support',
-    stat4: 'Satisfaction'
+    stat4: 'Satisfaction',
+    hiwTitle: 'How It Works',
+    hiwSubtitle: 'We offer you a smooth and reliable translation experience, with simple steps that guarantee quality and speed.',
+    hiwStep1: 'Receive Order',
+    hiwStep2: 'Review Documents',
+    hiwStep3: 'Translate & Proofread',
+    hiwStep4: 'Final Delivery',
+    faqTitle: 'Frequently Asked Questions',
+    faqSubtitle: 'Everything you need to know about our translation services and how we work.',
+    faq1Q: 'How long does translation take?',
+    faq1A: 'The duration depends on the document size, but we guarantee delivery of most orders within 24 hours.',
+    faq2Q: 'Is the translation officially certified?',
+    faq2A: 'Yes, all our translations are certified and accepted by all government agencies and embassies.',
+    faq3Q: 'How can I send my documents?',
+    faq3A: 'You can upload documents directly through our platform with complete security and confidentiality.',
+    faq4Q: 'Do you guarantee data confidentiality?',
+    faq4A: 'Absolutely, we apply strict encryption protocols to protect all your files and personal information.',
+    dotHero: 'Home',
+    dotAbout: 'About',
+    dotServices: 'Services',
+    dotHiw: 'Process',
+    dotFaq: 'FAQ'
   },
   ru: {
     logoText: 'Ван Транслейт',
@@ -82,7 +110,8 @@ export const translations = {
     services: 'Услуги',
     work: 'Портфолио',
     gallery: 'Блог',
-    heroTitle: 'Профессиональный и точный перевод ваших документов по всему миру',
+    heroTitle: 'Профессиональный и точный<br><span class="title-highlight">перевод</span> ваших документов',
+    heroBadge: '<span class="badge-dot"></span> Нам доверяют 500+ клиентов по всему миру',
     heroSubTitle: 'Получите комплексные услуги перевода на более чем 80 языков, с высочайшей точностью и быстрой доставкой.',
     btnNew: 'Заказать',
     btnAbout: 'О нас',
@@ -111,7 +140,12 @@ export const translations = {
     stat1: 'Лет опыта',
     stat2: 'Языков',
     stat3: 'Поддержка',
-    stat4: 'Довольных'
+    stat4: 'Довольных',
+    dotHero: 'Главная',
+    dotAbout: 'О нас',
+    dotServices: 'Услуги',
+    dotHiw: 'Процесс',
+    dotFaq: 'Вопросы'
   }
 };
 
@@ -121,6 +155,7 @@ const htmlTag = document.documentElement;
 function setLanguage(lang) {
   htmlTag.lang = lang;
   htmlTag.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.body.className = `font-${lang}`;
 
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');

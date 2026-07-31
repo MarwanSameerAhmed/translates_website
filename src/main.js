@@ -142,6 +142,62 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSlider();
   }
 
+  // ==================== SECTION DOTS NAVIGATION ====================
+  const sectionDots = document.getElementById('section-dots');
+  const dots = document.querySelectorAll('.section-dots .dot');
+  const sections = [
+    { id: 'hero', dark: false },
+    { id: 'about', dark: true },
+    { id: 'services', dark: true },
+    { id: 'how-it-works', dark: true },
+    { id: 'faq', dark: true }
+  ];
+
+  if (sectionDots && dots.length > 0) {
+    // Smooth scroll on dot click
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = dot.getAttribute('data-section');
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Scroll spy: track active section
+    const updateActiveDot = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      let currentSection = 'hero';
+      let isDark = false;
+
+      sections.forEach(sec => {
+        const el = document.getElementById(sec.id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // Section is active if its top is above the middle of viewport
+          if (rect.top <= windowHeight * 0.4) {
+            currentSection = sec.id;
+            isDark = sec.dark;
+          }
+        }
+      });
+
+      // Update active dot
+      dots.forEach(dot => {
+        dot.classList.toggle('active', dot.getAttribute('data-section') === currentSection);
+      });
+
+      // Toggle dark/light mode for dots
+      sectionDots.classList.toggle('dark', isDark);
+    };
+
+    window.addEventListener('scroll', updateActiveDot, { passive: true });
+    updateActiveDot();
+  }
+
 });
 
 // ==================== PRELOADER ====================
