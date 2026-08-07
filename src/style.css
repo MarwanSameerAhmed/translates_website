@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --text-dark: #1f1f22;
   --text-light: #ffffff;
   --glass-bg: rgba(255, 255, 255, 0.15);
@@ -333,7 +333,7 @@ html[dir="ltr"] .lang-switcher-dark {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 8rem 3rem 0; /* Added top padding to push content below the floating navbar */
   /* Centered Layout */
   display: flex;
   flex-direction: column;
@@ -342,7 +342,7 @@ html[dir="ltr"] .lang-switcher-dark {
 }
 
 html[dir="rtl"] .hero-content {
-  padding: 0 3rem;
+  padding: 8rem 3rem 0;
 }
 
 /* LEFT SIDE (Right side in RTL) */
