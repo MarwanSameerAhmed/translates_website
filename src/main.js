@@ -33,27 +33,83 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 10000);
   }
 
-  // ==================== ABOUT REVERSE PARALLAX ====================
+  // ==================== COMBINED SCROLL HANDLER (rAF optimized) ====================
   const aboutSection = document.getElementById('about');
   const col1 = document.querySelector('.col-1');
   const col2 = document.querySelector('.col-2');
+  const parallaxBg = document.getElementById('parallax-bg');
+  const topNav = document.querySelector('.top-nav');
+  
+  let scrollTicking = false;
+  let lastScrollY = window.scrollY;
+  
+  const onScroll = () => {
+    const currentScrollY = window.scrollY;
 
-  if (aboutSection && col1 && col2) {
-    window.addEventListener('scroll', () => {
+    // Smart Navbar Logic
+    if (topNav) {
+      if (currentScrollY > 50) {
+        topNav.classList.add('scrolled');
+      } else {
+        topNav.classList.remove('scrolled');
+      }
+
+      if (currentScrollY > lastScrollY && currentScrollY > 200) {
+        topNav.classList.add('nav-hidden'); // Scrolling down, hide
+      } else {
+        topNav.classList.remove('nav-hidden'); // Scrolling up, show
+      }
+    }
+    
+    lastScrollY = currentScrollY;
+
+    // About reverse parallax
+    if (aboutSection && col1 && col2) {
       const rect = aboutSection.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      
-      // Calculate progress: 0 when center of section is at center of screen
       const progress = (rect.top - windowHeight / 2 + rect.height / 2) / windowHeight;
       
       if (progress > -2 && progress < 2) {
-        // col-1 starts at 0 (top visible) and moves UP to -150px (bottom visible)
         col1.style.transform = `translateY(${(progress - 1) * 75}px)`;
-        // col-2 starts at -150px (bottom visible) and moves DOWN to 0 (top visible)
         col2.style.transform = `translateY(${(-progress - 1) * 75}px)`;
       }
-    });
-  }
+    }
+    
+    // Hero parallax
+    if (parallaxBg) {
+      parallaxBg.style.transform = `translateY(${currentScrollY * 0.4}px)`;
+    }
+
+    // Section dots scroll spy
+    if (sectionDots && dots.length > 0) {
+      const windowHeight = window.innerHeight;
+      let currentSection = 'hero';
+      let isDark = false;
+      sections.forEach(sec => {
+        const el = document.getElementById(sec.id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= windowHeight * 0.4) {
+            currentSection = sec.id;
+            isDark = sec.dark;
+          }
+        }
+      });
+      dots.forEach(dot => {
+        dot.classList.toggle('active', dot.getAttribute('data-section') === currentSection);
+      });
+      sectionDots.classList.toggle('dark', isDark);
+    }
+    
+    scrollTicking = false;
+  };
+  
+  window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(onScroll);
+      scrollTicking = true;
+    }
+  }, { passive: true });
 
   // ==================== SCROLL REVEAL ANIMATION ====================
   const revealOptions = {
@@ -66,28 +122,16 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('slide-visible');
-      } else {
-        entry.target.classList.remove('slide-visible');
+        revealObserver.unobserve(entry.target);
       }
     });
   }, revealOptions);
 
-  // Allow time for initial render, then observe
   setTimeout(() => {
     document.querySelectorAll('.slide-hidden-left, .slide-hidden-right, .slide-hidden-bottom, .img-card').forEach(el => {
       revealObserver.observe(el);
     });
   }, 100);
-
-  // ==================== SCROLL PARALLAX (HERO) ====================
-  const parallaxBg = document.getElementById('parallax-bg');
-  if (parallaxBg) {
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      // Move background down as user scrolls down (slower than scroll)
-      parallaxBg.style.transform = `translateY(${scrollY * 0.4}px)`;
-    });
-  }
 
   // ==================== FAQ SLIDER ====================
   const faqCards = document.querySelectorAll('.faq-card');
@@ -154,7 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   if (sectionDots && dots.length > 0) {
-    // Smooth scroll on dot click
     dots.forEach(dot => {
       dot.addEventListener('click', (e) => {
         e.preventDefault();
@@ -165,37 +208,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+  }
 
-    // Scroll spy: track active section
-    const updateActiveDot = () => {
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
-      let currentSection = 'hero';
-      let isDark = false;
+  // ==================== HOW IT WORKS TABS ====================
+  const hiwTabs = document.querySelectorAll('.hiw-tab');
+  const hiwImages = document.querySelectorAll('.hiw-showcase-img');
 
-      sections.forEach(sec => {
-        const el = document.getElementById(sec.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          // Section is active if its top is above the middle of viewport
-          if (rect.top <= windowHeight * 0.4) {
-            currentSection = sec.id;
-            isDark = sec.dark;
-          }
+  if (hiwTabs.length > 0 && hiwImages.length > 0) {
+    hiwTabs.forEach((tab) => {
+      tab.addEventListener('mouseenter', () => {
+        const step = tab.getAttribute('data-step');
+        
+        // Remove active from all tabs and images
+        hiwTabs.forEach(t => t.classList.remove('active'));
+        hiwImages.forEach(img => img.classList.remove('active'));
+        
+        // Add active to current tab
+        tab.classList.add('active');
+        
+        // Add active to corresponding image
+        const targetImg = document.querySelector(`.hiw-showcase-img[data-img-step="${step}"]`);
+        if (targetImg) {
+          targetImg.classList.add('active');
         }
       });
-
-      // Update active dot
-      dots.forEach(dot => {
-        dot.classList.toggle('active', dot.getAttribute('data-section') === currentSection);
-      });
-
-      // Toggle dark/light mode for dots
-      sectionDots.classList.toggle('dark', isDark);
-    };
-
-    window.addEventListener('scroll', updateActiveDot, { passive: true });
-    updateActiveDot();
+    });
   }
 
 });

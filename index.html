@@ -43,8 +43,7 @@
       <!-- Navbar (Full Width White) -->
       <nav class="top-nav">
         <div class="logo-wrapper">
-          <div class="logo-icon"></div>
-          <div class="logo-text" data-i18n="logoText">وان ترانسليت</div>
+          <img id="brand-logo" src="/src/assets/logo-en.jpeg" alt="One Translate" class="brand-logo-img" />
         </div>
 
         <!-- Hamburger Button -->
@@ -283,16 +282,33 @@
       </div>
     </section>
 
+    <!-- Edge transitioning from About to Services -->
+    <div class="services-canvas-edge-down"></div>
+
     <!-- Services Section -->
     <section id="services" class="services-section">
-      <div class="circle-decor top-left slide-hidden-bottom" style="transition-delay: 0.1s;"></div>
-      <div class="circle-decor bottom-right slide-hidden-bottom" style="transition-delay: 0.3s;"></div>
+      <div class="bg-lang-pattern-direct"></div>
       <div class="services-container">
 
         <!-- Left/Right: Image Column -->
-        <div class="services-image-col slide-hidden-left">
-          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80"
-            alt="Our Services" class="services-main-img">
+        <div class="services-image-col slide-hidden-left" id="services-img-container">
+          <div class="bento-grid" id="services-bento">
+            <div class="bento-item bento-1">
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="Legal Translation">
+            </div>
+            <div class="bento-item bento-2">
+              <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&w=400&q=80" alt="Simultaneous Translation">
+            </div>
+            <div class="bento-item bento-3">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=400&q=80" alt="Medical Translation">
+            </div>
+            <div class="bento-item bento-4">
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&q=80" alt="Certified Translation">
+            </div>
+            <div class="bento-item bento-5">
+              <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80" alt="Business Translation">
+            </div>
+          </div>
         </div>
 
         <!-- Right/Left: Content Column -->
@@ -359,12 +375,52 @@
       </div>
     </section>
 
+    <!-- Global Reach Section (Statistics) -->
+    <section id="statistics" class="stats-section">
+      <!-- Background Map -->
+      <div class="stats-map-bg">
+        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1920&q=80" alt="World Map Network">
+        <div class="stats-map-overlay"></div>
+      </div>
+      
+      <div class="stats-container">
+        <!-- Left: Content -->
+        <div class="stats-content slide-hidden-right">
+          <span class="section-badge section-badge-light" data-i18n="statsBadge" style="color: #fff; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">أرقام وحقائق</span>
+          <h2 class="stats-title" data-i18n="statsTitle">امتدادنا العالمي</h2>
+          <div class="section-accent-line"></div>
+          <p class="stats-desc" data-i18n="statsDesc">
+            نحن نفخر بتقديم خدمات ترجمة احترافية تدعم الأفراد والشركات في مختلف أنحاء العالم. من خلال شبكة واسعة من المترجمين المعتمدين، نسهل تواصلك مع العالم وتوسيع أعمالك بلا حدود.
+          </p>
+          <a href="#contact" class="btn-primary-solid" data-i18n="statsBtn">تواصل معنا الآن</a>
+        </div>
+
+        <!-- Right: Overlapping Circles (Forced LTR for correct overlapping) -->
+        <div class="stats-circles slide-hidden-left" dir="ltr">
+          
+          <div class="stat-circle circle-1">
+            <h3 class="stat-number">+<span data-i18n="statNum1">80</span></h3>
+            <p class="stat-label" data-i18n="statLabel1">لغة نترجمها</p>
+          </div>
+          
+          <div class="stat-circle circle-2">
+            <h3 class="stat-number">+<span data-i18n="statNum2">500</span></h3>
+            <p class="stat-label" data-i18n="statLabel2">عميل سعيد</p>
+          </div>
+          
+          <div class="stat-circle circle-3">
+            <h3 class="stat-number">+<span data-i18n="statNum3">10</span></h3>
+            <p class="stat-label" data-i18n="statLabel3">سنوات خبرة</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- Combined Sections Wrapper -->
     <div class="combined-sections-wrapper">
       <!-- How It Works Section -->
-      <section id="how-it-works" class="how-it-works-section">
-      <div class="hiw-circle-decor primary slide-hidden-right"></div>
-      <div class="hiw-circle-decor secondary slide-hidden-left"></div>
+      <section id="how-it-works" class="how-it-works-section bg-lang-pattern">
       <div class="hiw-container">
         <div class="hiw-header slide-hidden-bottom">
           <span class="section-badge section-badge-dark" data-i18n="hiwBadge">كيف نعمل</span>
@@ -374,55 +430,253 @@
             والسرعة.</p>
         </div>
 
-        <div class="hiw-steps-wrapper slide-hidden-bottom">
-          <!-- Step 1 -->
-          <div class="hiw-step-card slide-hidden-bottom" style="transition-delay: 0.1s;">
-            <div class="hiw-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&q=80"
-                alt="Step 1" class="hiw-img">
-              <div class="hiw-card-content">
-                <div class="hiw-step-number">01</div>
-                <h3 class="hiw-step-title" data-i18n="hiwStep1">استلام الطلب</h3>
-                <div class="hiw-animated-line"></div>
+        <div class="hiw-tabs-container slide-hidden-bottom">
+          <!-- Text Tabs Column -->
+          <div class="hiw-tabs-list">
+            <div class="hiw-tab active" data-step="1">
+              <div class="hiw-tab-number">01</div>
+              <div class="hiw-tab-content">
+                <h3 class="hiw-tab-title" data-i18n="hiwStep1">استلام الطلب</h3>
+              </div>
+            </div>
+            
+            <div class="hiw-tab" data-step="2">
+              <div class="hiw-tab-number">02</div>
+              <div class="hiw-tab-content">
+                <h3 class="hiw-tab-title" data-i18n="hiwStep2">مراجعة المستندات</h3>
+              </div>
+            </div>
+            
+            <div class="hiw-tab" data-step="3">
+              <div class="hiw-tab-number">03</div>
+              <div class="hiw-tab-content">
+                <h3 class="hiw-tab-title" data-i18n="hiwStep3">الترجمة والتدقيق</h3>
+              </div>
+            </div>
+            
+            <div class="hiw-tab" data-step="4">
+              <div class="hiw-tab-number">04</div>
+              <div class="hiw-tab-content">
+                <h3 class="hiw-tab-title" data-i18n="hiwStep4">التسليم النهائي</h3>
               </div>
             </div>
           </div>
 
-          <!-- Step 2 -->
-          <div class="hiw-step-card slide-hidden-bottom" style="transition-delay: 0.2s;">
-            <div class="hiw-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=400&q=80"
-                alt="Step 2" class="hiw-img">
-              <div class="hiw-card-content">
-                <div class="hiw-step-number">02</div>
-                <h3 class="hiw-step-title" data-i18n="hiwStep2">مراجعة المستندات</h3>
-                <div class="hiw-animated-line"></div>
+          <!-- Image Showcase Column -->
+          <div class="hiw-tabs-image">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80" alt="Step 1" class="hiw-showcase-img active" data-img-step="1">
+            <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80" alt="Step 2" class="hiw-showcase-img" data-img-step="2">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Step 3" class="hiw-showcase-img" data-img-step="3">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80" alt="Step 4" class="hiw-showcase-img" data-img-step="4">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Edge transitioning from How it Works to Testimonials -->
+    <div class="testimonials-canvas-edge"></div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="container relative z-10">
+        <div class="hiw-header slide-hidden-bottom">
+          <span class="section-badge section-badge-dark" data-i18n="testiBadge">آراء العملاء</span>
+          <h2 class="hiw-title" data-i18n="testiTitle">آراء عملائنا</h2>
+          <div class="section-accent-line section-accent-center"></div>
+          <p class="hiw-subtitle" data-i18n="testiSubtitle">نفخر بثقة عملائنا في خدماتنا، وهذه بعض آراءهم وتجاربهم معنا.</p>
+        </div>
+      </div>
+
+      <div class="marquee-container">
+        <!-- Track 1: RTL moving right-to-left -->
+        <div class="marquee-track track-1">
+          <!-- Card 1 -->
+          <div class="testimonial-card">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi1Text">ترجمة احترافية وسريعة جداً. أنصح بالتعامل معهم للترجمة المعتمدة.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi1Name">أحمد محمد</h4>
+                <span data-i18n="testi1Role">مدير تنفيذي</span>
               </div>
             </div>
           </div>
-
-          <!-- Step 3 -->
-          <div class="hiw-step-card slide-hidden-bottom" style="transition-delay: 0.3s;">
-            <div class="hiw-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80"
-                alt="Step 3" class="hiw-img">
-              <div class="hiw-card-content">
-                <div class="hiw-step-number">03</div>
-                <h3 class="hiw-step-title" data-i18n="hiwStep3">الترجمة والتدقيق</h3>
-                <div class="hiw-animated-line"></div>
+          <!-- Card 2 -->
+          <div class="testimonial-card">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi2Text">دقة في المواعيد وجودة لا مثيل لها في ترجمة العقود القانونية.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi2Name">سارة خالد</h4>
+                <span data-i18n="testi2Role">مستشارة قانونية</span>
               </div>
             </div>
           </div>
+          <!-- Card 3 -->
+          <div class="testimonial-card">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi3Text">فريق عمل رائع ومتعاون جداً. الترجمة الطبية كانت خالية من أي أخطاء.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi3Name">د. عمر صالح</h4>
+                <span data-i18n="testi3Role">طبيب أخصائي</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="testimonial-card">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi4Text">خدمة عملاء ممتازة واستجابة سريعة لجميع الاستفسارات والتعديلات.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi4Name">نورة العبدالله</h4>
+                <span data-i18n="testi4Role">مديرة تسويق</span>
+              </div>
+            </div>
+          </div>
+          <!-- Duplicate for seamless scroll -->
+          <div class="testimonial-card">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi1Text">ترجمة احترافية وسريعة جداً. أنصح بالتعامل معهم للترجمة المعتمدة.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi1Name">أحمد محمد</h4>
+                <span data-i18n="testi1Role">مدير تنفيذي</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi2Text">دقة في المواعيد وجودة لا مثيل لها في ترجمة العقود القانونية.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi2Name">سارة خالد</h4>
+                <span data-i18n="testi2Role">مستشارة قانونية</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi3Text">فريق عمل رائع ومتعاون جداً. الترجمة الطبية كانت خالية من أي أخطاء.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi3Name">د. عمر صالح</h4>
+                <span data-i18n="testi3Role">طبيب أخصائي</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi4Text">خدمة عملاء ممتازة واستجابة سريعة لجميع الاستفسارات والتعديلات.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi4Name">نورة العبدالله</h4>
+                <span data-i18n="testi4Role">مديرة تسويق</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <!-- Step 4 -->
-          <div class="hiw-step-card slide-hidden-bottom" style="transition-delay: 0.4s;">
-            <div class="hiw-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=400&q=80"
-                alt="Step 4" class="hiw-img">
-              <div class="hiw-card-content">
-                <div class="hiw-step-number">04</div>
-                <h3 class="hiw-step-title" data-i18n="hiwStep4">التسليم النهائي</h3>
-                <div class="hiw-animated-line"></div>
+        <!-- Track 2: RTL moving left-to-right -->
+        <div class="marquee-track track-2" dir="ltr">
+          <!-- Card 5 -->
+          <div class="testimonial-card" dir="rtl">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi5Text">تجربة سلسة من البداية للنهاية. المنصة سهلة الاستخدام والترجمة دقيقة.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi5Name">فهد الدوسري</h4>
+                <span data-i18n="testi5Role">رائد أعمال</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="testimonial-card" dir="rtl">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi6Text">أفضل مكتب ترجمة تعاملت معه على الإطلاق. أسعار تنافسية وجودة عالية.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi6Name">مها السالم</h4>
+                <span data-i18n="testi6Role">كاتبة محتوى</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 7 -->
+          <div class="testimonial-card" dir="rtl">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi7Text">اعتمدناهم كشريك دائم لترجمة كافة مستندات شركتنا الرسمية.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi7Name">ياسر القحطاني</h4>
+                <span data-i18n="testi7Role">مدير موارد بشرية</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 8 -->
+          <div class="testimonial-card" dir="rtl">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi8Text">سرعة في التنفيذ واحترافية في التعامل. شكراً لفريق العمل الرائع.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi8Name">هيفاء العتيبي</h4>
+                <span data-i18n="testi8Role">باحثة أكاديمية</span>
+              </div>
+            </div>
+          </div>
+          <!-- Duplicate 5-8 for seamless scroll -->
+          <div class="testimonial-card" dir="rtl">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi5Text">تجربة سلسة من البداية للنهاية. المنصة سهلة الاستخدام والترجمة دقيقة.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi5Name">فهد الدوسري</h4>
+                <span data-i18n="testi5Role">رائد أعمال</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card" dir="rtl">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi6Text">أفضل مكتب ترجمة تعاملت معه على الإطلاق. أسعار تنافسية وجودة عالية.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi6Name">مها السالم</h4>
+                <span data-i18n="testi6Role">كاتبة محتوى</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card" dir="rtl">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi7Text">اعتمدناهم كشريك دائم لترجمة كافة مستندات شركتنا الرسمية.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi7Name">ياسر القحطاني</h4>
+                <span data-i18n="testi7Role">مدير موارد بشرية</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card" dir="rtl">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text" data-i18n="testi8Text">سرعة في التنفيذ واحترافية في التعامل. شكراً لفريق العمل الرائع.</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" alt="Author">
+              <div class="author-info">
+                <h4 data-i18n="testi8Name">هيفاء العتيبي</h4>
+                <span data-i18n="testi8Role">باحثة أكاديمية</span>
               </div>
             </div>
           </div>
@@ -430,9 +684,11 @@
       </div>
     </section>
 
+    <!-- Edge transitioning to FAQ -->
+    <div class="faq-canvas-edge"></div>
+
     <!-- FAQ Section -->
-    <section id="faq" class="faq-section">
-      <div class="faq-circle-decor slide-hidden-left"></div>
+    <section id="faq" class="faq-section bg-lang-pattern">
       <div class="faq-container">
         <div class="hiw-header slide-hidden-bottom">
           <span class="section-badge section-badge-dark" data-i18n="faqBadge">أسئلة متكررة</span>
@@ -490,8 +746,147 @@
         </div>
       </div>
     </section>
-    </div>
 
+    <!-- Edge transitioning from FAQ to Contact -->
+    <div class="contact-canvas-edge-up"></div>
+
+    <!-- Clean Contact Us Section -->
+    <section id="contact" class="contact-section">
+      <!-- Engraved Background Text -->
+      <div class="engraved-bg-text" aria-hidden="true">
+        <span>TRANSLATE</span>
+        <span>GLOBAL</span>
+        <span>EXCELLENCE</span>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-header slide-hidden-bottom">
+          <h2 class="hiw-title" data-i18n="contactTitle">نحن هنا لخدمتك</h2>
+          <div class="section-accent-line section-accent-center"></div>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Lottie Animation -->
+          <div class="contact-lottie-col slide-hidden-right">
+            <lottie-player src="/Language Translator.json" background="transparent" speed="1" style="width: 100%; max-width: 500px; height: auto;" loop autoplay></lottie-player>
+          </div>
+
+          <!-- Premium Contact Form -->
+          <div class="contact-form-col slide-hidden-left">
+            <form class="premium-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" id="fname" required placeholder="First Name" data-i18n-placeholder="formFirstName">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="lname" required placeholder="Last Name" data-i18n-placeholder="formLastName">
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="tel" id="phone" required placeholder="Phone Number" dir="ltr" data-i18n-placeholder="formPhone">
+                </div>
+                <div class="form-group">
+                  <input type="email" id="email" required placeholder="Email Address" data-i18n-placeholder="formEmail">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <textarea id="message" rows="5" required placeholder="How Can We Help You?" data-i18n-placeholder="formMessageText"></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary-solid form-submit-btn">
+                <span data-i18n="formSubmit">إرسال الطلب</span>
+              </button>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Downward Edge transitioning from Contact (White) to Footer (Brown) -->
+    <div class="footer-canvas-edge"></div>
+
+    <!-- Classic Site Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          
+          <!-- Column 1: Brand & About -->
+          <div class="footer-brand-col">
+            <div class="footer-logo">
+              <span class="logo-text" data-i18n="logoText">ون ترانسليت</span>
+            </div>
+            <p class="footer-desc" data-i18n="footerDesc">
+              نحن شريكك الموثوق للترجمة المعتمدة والاحترافية. نكسر حواجز اللغة لنصل بك إلى العالمية.
+            </p>
+            <div class="footer-socials">
+              <a href="#" aria-label="Twitter"><svg width="24" height="24" viewBox="0 0 256 256"><path fill="currentColor" d="M247.39,68.94A8,8,0,0,0,240,64h-35.3l-28.16,42.24L143.25,65.65A8,8,0,0,0,136,64H95.49a8,8,0,0,0-5.74,13.59L137.28,126l-47.53,71.29A8,8,0,0,0,96.41,208h36.65l29.62-44.43L197.66,206.1A8,8,0,0,0,204.66,208h35.85a8,8,0,0,0,5.74-13.59L197.23,144l49.2-73.81A8,8,0,0,0,247.39,68.94ZM109.11,80,188.5,192H168.16L88.77,80Z"/></svg></a>
+              <a href="#" aria-label="LinkedIn"><svg width="24" height="24" viewBox="0 0 256 256"><path fill="currentColor" d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm-12,176H172V148.67c0-12.75-4.88-20.17-15.69-20.17-12,0-17.75,8.42-17.75,19.34V200H106.3V104h32.26v15h.45c4.78-8.68,16.51-18.17,34.33-18.17,23.3,0,38.66,15.62,38.66,48.24ZM74.8,88H74.33A18,18,0,1,1,74.8,52C85.59,52,94,60,94,70.19S85.76,88,74.8,88ZM58.3,200H90.58V104H58.3Z"/></svg></a>
+              <a href="#" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 256 256"><path fill="currentColor" d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></svg></a>
+            </div>
+          </div>
+  
+          <!-- Column 2: Quick Links -->
+          <div class="footer-links-col">
+            <h4 data-i18n="footerLinksTitle">روابط سريعة</h4>
+            <ul>
+              <li><a href="#home" data-i18n="home">الرئيسية</a></li>
+              <li><a href="#about" data-i18n="about">من نحن</a></li>
+              <li><a href="#how-it-works" data-i18n="hiwBadge">كيف نعمل</a></li>
+              <li><a href="#testimonials" data-i18n="testiBadge">آراء العملاء</a></li>
+              <li><a href="#faq" data-i18n="faqBadge">أسئلة متكررة</a></li>
+            </ul>
+          </div>
+  
+          <!-- Column 3: Services -->
+          <div class="footer-links-col">
+            <h4 data-i18n="footerServicesTitle">خدماتنا</h4>
+            <ul>
+              <li><a href="#" data-i18n="formService1">ترجمة معتمدة</a></li>
+              <li><a href="#" data-i18n="formService2">ترجمة طبية</a></li>
+              <li><a href="#" data-i18n="formService3">ترجمة قانونية</a></li>
+              <li><a href="#" data-i18n="formService4">ترجمة فورية</a></li>
+            </ul>
+          </div>
+  
+          <!-- Column 4: Newsletter -->
+          <div class="footer-newsletter-col">
+            <h4 data-i18n="footerNewsletterTitle">النشرة البريدية</h4>
+            <p data-i18n="footerNewsletterDesc">اشترك للحصول على آخر الأخبار والعروض الحصرية.</p>
+            <form class="footer-newsletter-form">
+              <input type="email" required placeholder="example@email.com" id="newsletter-email">
+              <button type="submit" aria-label="Subscribe">
+                <svg width="20" height="20" viewBox="0 0 256 256"><path fill="currentColor" d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-184,56A16,16,0,0,0,22,109.83l69,39.46a8,8,0,0,0,11.23-2.61l48-80a8,8,0,1,1,13.73,8.23l-48,80a8,8,0,0,0,1,8.92l60.25,70.28a16,16,0,0,0,25.6-3.82l64-184A16,16,0,0,0,227.32,28.68ZM188.75,217.15l-51.52-60.1a24.08,24.08,0,0,1-3-26.74l31.25-52.09L37.19,101,213.73,47.16Z"/></svg>
+              </button>
+            </form>
+          </div>
+  
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-container bottom-flex">
+          <p class="copyright" data-i18n="footerCopyright">© 2026 ون ترانسليت. جميع الحقوق محفوظة.</p>
+          <div class="footer-bottom-links">
+            <a href="#" data-i18n="privacy">سياسة الخصوصية</a>
+            <a href="#" data-i18n="terms">شروط الخدمة</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <!-- Floating Chat Buttons -->
+  <div class="floating-chat-wrapper">
+    <a href="#" class="floating-btn max-btn" target="_blank" title="Max Support">
+      <svg width="24" height="24" viewBox="0 0 256 256"><path fill="currentColor" d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216ZM140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM96,128a12,12,0,1,1-12-12A12,12,0,0,1,96,128Zm88,0a12,12,0,1,1-12-12A12,12,0,0,1,184,128Z"/></svg>
+    </a>
+    <a href="https://wa.me/966500000000" class="floating-btn whatsapp-btn" target="_blank" title="WhatsApp">
+      <svg width="28" height="28" viewBox="0 0 256 256"><path fill="currentColor" d="M187.58,144.84l-32-16a8,8,0,0,0-8,1.5l-19.62,18.7a15.28,15.28,0,0,1-14.51,3.29,103.73,103.73,0,0,1-46.19-46.19,15.28,15.28,0,0,1,3.29-14.51l18.7-19.62a8,8,0,0,0,1.5-8l-16-32a8,8,0,0,0-10.61-4l-24.16,9.52A15.8,15.8,0,0,0,29.62,54.7c1.78,24,11.39,55,34.42,78.07,26.6,26.6,62,35.61,84.94,35.25A15.86,15.86,0,0,0,165.73,157l9.52-24.16A8,8,0,0,0,187.58,144.84ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></svg>
+    </a>
   </div>
 
   <!-- Custom Cursor -->
